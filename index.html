@@ -3,28 +3,29 @@
 
 <head>
   <!-- add required and recommended <meta> tags -->
-  <!-- charset
-  viewport
-  author
-  description
-  robots
-og
-  title
-  type
-  image
-  URL
-og for Twitter
-  card
-  site
-  creator
-  title
-  description
-  image -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Izumi Silagy">
+  <meta name="description" content="Find community and challenge in your fitness journey at Limitless Fitness. Our facilities encourage you to be your best, no matter your level.">
+  <meta name="robots" content="index, follow">
 
+  <meta property="og:title" content="Limitless Fitness">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/facility.jpg">
+  <meta property="og:URL" content="https://www.limitlessfitness.com/home">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@limitlessfitness">
+  <meta name="twitter:creator" content="@izusil">
+  <meta name="twitter:title" content="Limitless Fitness">
+  <meta name="twitter:description" content="Find community and challenge in your fitness journey at Limitless Fitness. Our facilities encourage you to be your best, no matter your level.">
+  <meta name="twitter:image" content="images/facility.jpg"> 
+  <title>Limitless Fitness | Home</title>
 </head>
 
 <body>
   <!-- add a skip link that skips to the main content -->
+  <a class=" skip-to-content" href="#main">Skip to main content</a>
   <!-- add correct heading levels -->
   <header>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#007BFF" stroke-linecap="round" stroke-linejoin="round" width="75" height="75" stroke-width="1.5">
@@ -41,24 +42,23 @@ og for Twitter
     <a href="#">Join Now</a>
     <!-- add alt text where necessary -->
     <!-- add responsive images for resolution switching -->
-
-    src="images/facility.jpg"
+    <img srcset="images/facility.jpg, images/facility-320w.jpg 1.5x, images/facility-768w.jpg 2x" src="images/facility.jpg" alt="Black and white photo of a gym interior. Large windows, treadmills, and lifting equipment are shown.">
 
   </header>
   <nav>
     <h2> Main Navigation</h2>
     <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Classes</a></li>
-      <li><a href="#">Personal Training</a></li>
-      <li><a href="#">Membership Options</a></li>
-      <li><a href="#">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#training">Personal Training</a></li>
+      <li><a href="#membership">Membership Options</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <main>
-    <section>
-      <h2> About Us</h2>
+  <main id="main">
+    <section id="about">
+      <h2>About Us</h2>
       <p>Welcome to Limitless Fitness, where fitness meets community. Our state-of-the-art facility is designed to inspire and support you at every stage of your journey. Whether you're a beginner or a seasoned athlete, our expert trainers and diverse classes provide the perfect environment to achieve your personal best.</p>
       <section>
         <h3> What Sets Us Apart</h3>
@@ -70,7 +70,7 @@ og for Twitter
         </ul>
       </section>
     </section>
-    <section>
+    <section id="classes">
       <h2> Our Classes</h2>
       <p>Discover a wide variety of classes designed to challenge and energize you.</p>
       <ul>
@@ -82,10 +82,10 @@ og for Twitter
       </ul>
       <!-- add alt text where necessary -->
       <!-- add responsive images for resolution switching -->
-      src="images/classes.jpg"
+      <img srcset="images/classes.jpg, images/classes-320w.jpg 1.5x, images/classes-768w.jpg 2x" src="images/classes.jpg" alt="Black and white photo of three people lifting barbells.">
 
     </section>
-    <section>
+    <section id="training">
       <h2> Personal Training</h2>
       <p>
         Take your fitness to the next level with our one-on-one training sessions. Our certified trainers work with you to create a customized plan that fits your lifestyle and targets your specific goals.
@@ -94,10 +94,10 @@ og for Twitter
       <a href="#">Book a Free Consultation today!</a>
       <!-- add alt text where necessary -->
       <!-- add responsive images for resolution switching -->
-      src="images/dumbells.jpg"
+      <img srcset="images/dumbells.jpg, images/dumbells-320w.jpg 1.5x, images/dumbells-768w.jpg 2x" src="images/dumbells.jpg" alt="Black and white photo of numerous weights lined up on two rows of racks.">
 
     </section>
-    <section>
+    <section id="membership">
       <h2> Membership Options</h2>
       <p>At Limitless Fitness, we offer flexible membership plans to suit your needs.</p>
       <ul>
@@ -109,25 +109,40 @@ og for Twitter
         <h3> Join Limitless Fitness Today!</h3>
         <p>Fill out the form below to kickstart your fitness journey:</p>
         <!--add accessibility to the form-->
-        <!-- labels for all inputs
-  for attribute matching id attribute
-  appropriate type values -->
 
-        <form action="post" method="https://wp.zybooks.com/form-viewer.php">
-          Full Name
-          Email Address
-          Phone Number
-          Membership Type
-          Select a Membership Option
-          Monthly Membership
-          Annual Membership
-          Family & Group Plans
-          Tell us about your fitness goals:
-          Submit</form>
+        <form action="https://wp.zybooks.com/form-viewer.php" method="post">
+
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" required autocomplete="name">
+
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" required autocomplete="email">
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" required autocomplete="tel">
+          <fieldset>
+            <legend> Membership Type</legend>
+            <p> Select a Membership Option:</p>
+
+            <input type="radio" id="monthly" name="membership" value="monthly" checked>
+            <label for="monthly"> Monthly Membership</label>
+
+            <input type="radio" id="annual" name="membership" value="annual">
+            <label for="annual">Annual Membership</label>
+
+            <input type="radio" id="family" name="membership" value="family">
+            <label for="family">Family & Group Plans</label>
+          </fieldset>
+
+          <label for="goals">Tell us about your fitness goals:</label>
+          <textarea id="goals" ></textarea>
+
+          <input type="submit" name="submit" value="Submit">
+        </form>
       </section>
     </section>
   </main>
-  <aside>
+  <aside id="testimonials">
     <h2>Testimonials</h2>
     <q>
       Joining Limitless Fitness has completely transformed my approach to fitness. The supportive community and expert guidance have made all the difference! - Alex R.
@@ -158,7 +173,7 @@ og for Twitter
         </li>
       </ul>
     </section>
-    <section>
+    <section id="contact">
       <h2> Contact Us</h2>
       <address>
         <p>1234 HIIT St. <br>
@@ -167,6 +182,6 @@ og for Twitter
       </address>
     </section>
   </footer>
-</body>
+  </body>
 
 </html>
